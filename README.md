@@ -4,6 +4,18 @@
 
 - StoryBook 8v
 
+## svg파일 불러오기
+
+svg 파일을 불러오는 방법으로는 총 3가지 방법으로
+
+- public 폴더에 있는 svg 경로로 가져오기 ( ex. public/[...slug].svg )
+- src/assets 폴더에 있는 svg 경로로 가져오기 ( ex. src/assets/[...slug].svg )
+- 클라우드 서버에 올려둔 svg 경로로 가져오기 ( ex. https:ip/[...slug].svg )
+
+### 1. public 폴더에 있는 svg 경로로 가져오기
+
+![Alt text](public/screenshots/screenshot1.png)
+
 ## 강의에선 설명이 빠져있지만 알아두면 좋을 것들
 
 ### <span style="color: orange;">.storybook/main.ts - autodocs</span>
