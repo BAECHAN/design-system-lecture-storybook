@@ -48,7 +48,7 @@ export default {
       white: "#ffffff",
       mono100: "#f1f1f1",
       mono200: "#bebebe",
-      mono200: "#d6d7d9",
+      mono300: "#d6d7d9",
       error: "#d01e1e",
       social: "#395997",
     },

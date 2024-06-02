@@ -16,6 +16,18 @@ svg 파일을 불러오는 방법으로는 총 3가지 방법으로
 
 ![Alt text](public/screenshots/screenshot1.png)
 
+### 2. assets 폴더에 있는 svg 경로로 가져오기
+
+- public처럼 경로를 지정하면 될 줄 알았지만 경로를 찾을 수 없는 상황이 발생함
+  ![Alt text](public/screenshots/screenshot2.png)
+
+- 그래서 src폴더 아래에 있는 경우 react component와 같이 굳이 import로 가져와야함
+  ![Alt text](public/screenshots/screenshot3.png)
+
+### 3. 클라우드 서버에 올려둔 svg 경로로 가져오기
+
+- 1번( public ) 때와 같이 경로로 가져오면 됩니다.
+
 ## 강의에선 설명이 빠져있지만 알아두면 좋을 것들
 
 ### <span style="color: orange;">.storybook/main.ts - autodocs</span>

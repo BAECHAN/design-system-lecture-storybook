@@ -26,6 +26,18 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+// src 폴더 안에 있을 경우 아래와 같이 가져와야함
+
+// import deleteIcon from "../assets/ic-asset-delete-dark.svg";
+
+// export const Default: Story = {
+//   args: {
+//     alt: "icon",
+//     iconPath: deleteIcon,
+//     onClick: () => {},
+//   },
+// };
+
 export const Default: Story = {
   args: {
     alt: "icon",
