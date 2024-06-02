@@ -1,5 +1,9 @@
 # 인프런 - 스토리북 강좌 따라하기
 
+## 환경
+
+- StoryBook 8v
+
 ## 강의에선 설명이 빠져있지만 알아두면 좋을 것들
 
 ### <span style="color: orange;">.storybook/main.ts - autodocs</span>
