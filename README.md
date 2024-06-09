@@ -71,3 +71,7 @@ export default Button;
 ```
 
 위와 같이 컴포넌트 파일에 주석을 달아두면, autodocs: "tag" 설정 덕분에 Storybook은 이 주석을 기반으로 자동으로 문서를 생성합니다.
+
+## 강의 노트 모음
+
+https://www.inflearn.com/notes/62567
