@@ -39,6 +39,11 @@ const meta = {
       description: "에러 상태 여부",
       defaultValue: false,
     },
+    id: {
+      control: "text",
+      description: "텍스트 필드의 id",
+      defaultValue: "",
+    },
     onChange: { action: "changed", description: "텍스트 필드 값 변경 이벤트" },
     onIconClick: { action: "clicked", description: "아이콘 버튼 클릭 이벤트" },
   },
@@ -61,6 +66,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
+    id: "email",
     iconAlt: "icon",
     iconPath: "/icons/ic-public-delete-dark.svg",
     placeholder: "텍스트를 입력해주세요",

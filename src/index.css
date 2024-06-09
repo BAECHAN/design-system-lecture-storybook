@@ -5,3 +5,15 @@
 body {
   font-family: "Noto Sans KR";
 }
+
+/* .relative {
+  > p {
+    position: absolute;
+  }
+} */
+
+@layer components {
+  .relative > p {
+    @apply absolute;
+  }
+}

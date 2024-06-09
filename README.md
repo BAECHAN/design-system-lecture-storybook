@@ -4,6 +4,18 @@
 
 - StoryBook 8v
 
+## 시작
+
+### 스토리북 서버 열기
+
+`npm run storybook`
+
+### 개발서버 열기
+
+`npm run dev`
+
+![Alt text](public/screenshots/screenshot4.png)
+
 ## svg파일 불러오기
 
 svg 파일을 불러오는 방법으로는 총 3가지 방법으로

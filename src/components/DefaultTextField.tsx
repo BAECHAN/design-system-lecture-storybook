@@ -3,6 +3,7 @@ import ErrorMessage from "./ErrorMessage";
 import IconButton from "./IconButton";
 
 interface IDefaultTextFieldProps {
+  id: string;
   errorMessage: string;
   iconPath: string;
   iconAlt: string;
@@ -14,6 +15,7 @@ interface IDefaultTextFieldProps {
 }
 
 export default function DefaultTextField({
+  id,
   errorMessage,
   iconPath,
   iconAlt,
@@ -32,17 +34,19 @@ export default function DefaultTextField({
       : "border-primary";
 
   return (
-    <div>
+    <div className="relative">
       <div
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
         className={`
+        text-start
     text-primary
     border-b
     ${borderColor}
     `}
       >
         <input
+          id={id}
           className="outline-none"
           placeholder={placeholder}
           value={value}

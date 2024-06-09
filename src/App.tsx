@@ -1,34 +1,40 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
+import DefaultTextField from "./components/DefaultTextField";
+import Label from "./components/Label";
+import { Button } from "./components/Button";
 
 function App() {
-  const [count, setCount] = useState(0);
-
+  const [isError, setIsError] = useState<boolean>(false);
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <h1 className="text-3xl text-secondary underline">Hello world!</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Label htmlFor="email">이메일</Label>
+      <DefaultTextField
+        id="email"
+        placeholder="이메일을 입력해주세요."
+        value=""
+        errorMessage="이메일을 확인해주세요."
+        isError={isError}
+        iconPath="/icons/ic-public-delete-dark.svg"
+        iconAlt="delete"
+        onChange={() => {}}
+        onIconClick={() => {}}
+      />
+      <div className="my-20" />
+      <Label htmlFor="address">주소</Label>
+      <DefaultTextField
+        id="address"
+        placeholder="주소를 입력해주세요."
+        value=""
+        errorMessage="주소를 확인해주세요."
+        isError={isError}
+        iconPath="/icons/ic-public-delete-dark.svg"
+        iconAlt="delete"
+        onChange={() => {}}
+        onIconClick={() => {}}
+      />
+
+      <Button label={"에러토글"} onClick={() => setIsError((prev) => !prev)} />
     </>
   );
 }
