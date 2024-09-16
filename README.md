@@ -70,6 +70,58 @@ autodocs: "tag"
 const Button = ({ label, onClick }: { label: string; onClick: () => void }) => (
   <button onClick={onClick}>{label}</button>
 );
+```
+
+### pseudo 상태도 라이브러리로 example 등록가능
+
+1. 라이브러리 추가
+
+```bash
+npm install storybook-addon-pseudo-states@latest --save-dev
+```
+2. ./storybook/main.ts 에 코드 추가
+
+```ts
+// ./storybook/main.ts
+import type { StorybookConfig } from '@storybook/react-vite';
+
+const config: StorybookConfig = {
+  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
+  addons: [
+    ...,
+    'storybook-addon-pseudo-states',
+```
+
+3. 스토리에 추가
+
+```ts
+// BaseButton.stories.ts
+
+export const Hover: Story = {
+  args: {
+   ...,
+  },
+};
+Hover.parameters = { pseudo: { hover: true } };
+```
+
+4. 스타일은 컴포넌트에서 주면됩니다.
+```tsx
+// BaseButton.tsx
+  const hoverStyle = 'hover:bg-opacity-80';
+
+  return (
+    <Button
+      className={`${hoverStyle}`}
+      {...props}
+      disabled={disabled}
+    >
+      {label}
+    </Button>
+  );
+```
+
+   
 
 export default Button;
 ```
