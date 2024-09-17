@@ -157,3 +157,35 @@ export const Large: Story = {
 };
 ```
 
+### 클릭이벤트 처리 후 콜백함수 처리하는 스토리 추가하기
+
+1. 스토리 파일의 확장자를 tsx로 변경
+2. render와 훅을 이용하여 처리
+  
+```tsx
+// EditableTitle.stories.tsx
+// 상태를 관리하는 스토리 정의
+export const OnSaveTitle: Story = {
+  render: (args) => {
+    const [title, setTitle] = useState(args.initialTitle);
+
+    const handleSaveTitle = (newTitle: string) => {
+      setTitle(newTitle);
+    };
+
+    return (
+      <EditableTitle
+        {...args}
+        initialTitle={title}
+        onSaveTitle={handleSaveTitle} // 상태 관리
+      />
+    );
+  },
+  args: {
+    initialTitle: '타이틀',
+    size: 'medium',
+  },
+};
+
+```
+
