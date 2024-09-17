@@ -186,6 +186,43 @@ export const OnSaveTitle: Story = {
     size: 'medium',
   },
 };
+```
+### svg파일 이미지 사이즈 조절하는 법
+
+- w-x 또는 h-x로 명시하면 되나, h도 명시하니까 안되서 h-auto로 하고 w만 조정하면 svg가 비율맞춰서 커짐
+  
+```tsx
+const small = 'w-10';
+const medium = 'w-16';
+const large = 'w-20';
+
+interface IconButtonProps {
+  iconPath: string;
+  alt: string;
+  onClick: MouseEventHandler<HTMLButtonElement>;
+  size?: Size;
+}
+
+export default function IconButton({
+  iconPath,
+  alt,
+  onClick,
+  size = 'medium',
+}: IconButtonProps) {
+  const sizeClass: Record<Size, string> = {
+    small,
+    medium,
+    large,
+  };
+
+  return (
+    <button
+      onClick={onClick}
+      className={`inline-flex items-center justify-center rounded-full p-0 transition-colors duration-300`}
+    >
+      <img src={iconPath} alt={alt} className={`${sizeClass[size]} h-auto`} />
+    </button>
+  );
+}
 
 ```
-
