@@ -72,6 +72,8 @@ const Button = ({ label, onClick }: { label: string; onClick: () => void }) => (
 );
 ```
 
+위와 같이 컴포넌트 파일에 주석을 달아두면, autodocs: "tag" 설정 덕분에 Storybook은 이 주석을 기반으로 자동으로 문서를 생성합니다.
+
 ### pseudo 상태도 라이브러리로 example 등록가능
 
 1. 라이브러리 추가
@@ -119,11 +121,39 @@ Hover.parameters = { pseudo: { hover: true } };
       {label}
     </Button>
   );
-```
-
-   
 
 export default Button;
 ```
 
-위와 같이 컴포넌트 파일에 주석을 달아두면, autodocs: "tag" 설정 덕분에 Storybook은 이 주석을 기반으로 자동으로 문서를 생성합니다.
+### meta - args 속성
+
+- 해당 속성은 default 값을 지정하는 속성
+- 나머지 속성이나 오버라이드 할 속성은 스토리에 작성
+  
+```ts
+const meta: Meta<typeof ToggleFilterTab> = {
+ ...,
+  args: { onClick: fn(), disabled: false, size: 'medium', option: [
+    { label: '전체', value: 'all' },
+    { label: '스크랩', value: 'scrap' },
+  ] },
+} satisfies Meta<typeof ToggleFilterTab>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Small: Story = {
+  args: {
+    size: 'small',
+  },
+};
+
+export const Medium: Story = {};
+
+export const Large: Story = {
+  args: {
+    size: 'large',
+  },
+};
+```
+
